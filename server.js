@@ -6,8 +6,8 @@ const path = require('path');
 // ==========================================
 // CONFIGURATION - EDIT THESE LINES
 // ==========================================
-const BOT_TOKEN = 'PASTE_YOUR_BOT_TOKEN_HERE'; 
-const WEBHOOK_URL = 'PASTE_YOUR_WEBHOOK_URL_HERE';
+const BOT_TOKEN = 'MTU2MTU4MzgzMDMyMDY4NTEwNg.G5lS3W.wLQh6kf-RCmDP6XpznWsqGYgqm294SnP8mCsDg'; 
+const WEBHOOK_URL = 'https://discord.com/api/webhooks/1565518428796755991/X1uQra62qvt8BmWz4v9cwsxaQWaRUVC-8vCnKKO61lFB0CzdmT_qBcR0HbvNk8aJGELZ';
 // ==========================================
 
 const app = express();
